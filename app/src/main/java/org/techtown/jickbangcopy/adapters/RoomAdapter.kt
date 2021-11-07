@@ -7,5 +7,5 @@ import org.techtown.jickbangcopy.datas.RoomData
 class RoomAdapter (
     val mContext: Context,
     val resId: Int,
-    val mList: ArrayList<RoomData>): ArrayAdapter<RoomAdapter>(){
+    val mList: ArrayList<RoomData>): ArrayAdapter<RoomAdapter>( mContext,resId,mList){
 }
