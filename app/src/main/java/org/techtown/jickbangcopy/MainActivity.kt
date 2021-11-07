@@ -1,5 +1,6 @@
 package org.techtown.jickbangcopy
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
@@ -28,6 +29,10 @@ class MainActivity : AppCompatActivity() {
         roomListView.setOnItemClickListener { adapterView, view, position, l ->
 
             val clickledRoom = mRooms[position]
+
+            val myIntent = Intent(this, ViewRoomDetailActivity::class.java)
+            myIntent.putExtra("room",clickledRoom)
+            startActivity(myIntent)
 
         }
 
