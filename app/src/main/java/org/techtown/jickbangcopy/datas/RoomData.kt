@@ -16,7 +16,7 @@ class RoomData(
         if(this.price < 10000) {
 
             val priceStr = NumberFormat.getNumberInstance(Locale.KOREA).format(this.price)
-            return priceStr
+            return priceStr + "만원"
         }
 
         else{
@@ -33,4 +33,18 @@ class RoomData(
 
     }
 
+//    층수를 상황에 따라 가공해서 보여주는 함수
+    fun getFormattedFloor() : String {
+
+        if(this.floor > 0) {
+            return "${this.floor}층"
+        }
+        else if( this.floor == 0 ) {
+            return "반지하하하"
+        }
+        else  {
+            return "지하${-this.floor}층"
+        }
+
+    }
 }
